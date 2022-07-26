@@ -1,7 +1,7 @@
 {
-  "name": "JATE",
+  "name": "jate",
   "version": "1.0.0",
-  "description": "",
+  "description": "picture # ## Description . # ## User Story ``` . ``` # ## Technology * Javascript # ## Resources * [Github repo]() * [My Github]() * [Video submission]()",
   "main": "server.js",
   "scripts": {
     "start:dev": "",
@@ -15,11 +15,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "express": "^4.18.1",
+    "if-env": "^1.0.4",
+    "init": "^0.1.2",
+    "install": "^0.13.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krosario314/pwaTextEdit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krosario314/pwaTextEdit/issues"
+  },
+  "homepage": "https://github.com/krosario314/pwaTextEdit#readme"
 }
