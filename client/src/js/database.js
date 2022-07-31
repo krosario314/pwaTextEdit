@@ -12,25 +12,31 @@ const initdb = async () =>
     },
   });
 
-  export const getDb = async (value) => {
-    console.log('Getting data from the jateDB');
-    const jateDb = await openDB('jate', 1);
-    const tx = jateDb.transaction('jate', 'readwrite');
-    const objStore = tx.objectStore('jate');
-    const req = objStore.getAll()
-    const res = await req;
-    console.log('data saved to the jateDB', res);
-  };
+export const putDb = async (content) => {
+  console.log('PUT to the database');
 
-  export const putDb = async (id, value) => {
-    console.log('PUT request to update the jateDB');
-    const jateDb = await openDB('jate', 1);
-    const tx = jateDb.transaction('jate', 'readwrite');
-    const objStore = tx.objectStore('jate');
-    const req = objStore.put({ id: id, value: value })
-    const res = await req;
-    console.log('data saved to the jateDB', res);
-  };
-  
- 
-  initdb();
+  const jateDb = await openDB('jate', 1);
+  const tx = jateDb.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const request = store.put({ id: id, jate: content });
+  const result = await request;
+
+  console.log('data saved to database', result);
+  return result;
+}
+export const getDb = async () => {
+  console.error('getDb not implemented');
+  console.log('GET from the database');
+
+  const contactDb = await openDB('jate', 1);
+  const tx = contactDb.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const request = store.getAll();
+  const result = await request;
+
+  console.log('result.value', result);
+
+  return result;
+}
+
+initdb();
