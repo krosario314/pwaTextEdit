@@ -44,7 +44,6 @@ module.exports = () => {
     ],
 
     module: {
-      // TODO: Add CSS loaders and babel to webpack.
       rules: [
         {
           test: /\.css$/i,
